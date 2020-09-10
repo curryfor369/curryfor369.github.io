@@ -19,6 +19,7 @@ var _hmt = _hmt || [];
 
 
   
+
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://iscurry.com">
@@ -256,19 +257,19 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-hadoop3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hadoop2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/29/hadoop3/">hadoop3</a>
+      <a class="article-title" href="/2019/03/29/hadoop2/">hadoop2</a>
     </h1>
   
 
         
-        <a href="/2019/03/29/hadoop3/" class="archive-article-date">
+        <a href="/2019/03/29/hadoop2/" class="archive-article-date">
   	<time datetime="2019-03-29T07:03:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-29</time>
 </a>
         
@@ -279,305 +280,10 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-hadoop简介"><a href="#1-hadoop简介" class="headerlink" title="1. hadoop简介"></a>1. hadoop简介</h1><h2 id="1、作用"><a href="#1、作用" class="headerlink" title="1、作用"></a>1、作用</h2><ul>
-<li>主要解决海量数据的存储和分析计算</li>
-</ul>
-<h2 id="2、历史"><a href="#2、历史" class="headerlink" title="2、历史"></a>2、历史</h2><ul>
-<li><p>2006.3 hadoop产生</p>
-</li>
-<li><p>源于google的三篇论文</p>
-</li>
-<li><p>GFS – HDFS</p>
-</li>
-<li><p>MAP-REDUCE – MAPREDUCE</p>
-</li>
-<li><p>BIGTABLE – HBASE</p>
-</li>
-</ul>
-<h2 id="3、三大版本"><a href="#3、三大版本" class="headerlink" title="3、三大版本"></a>3、三大版本</h2><ul>
-<li>apache 原始版本</li>
-<li>cloudera  大型企业用</li>
-<li>hortonworks 文档较好</li>
-</ul>
-<h2 id="4、4大优势"><a href="#4、4大优势" class="headerlink" title="4、4大优势"></a>4、4大优势</h2><ul>
-<li>高可靠性：多个副本</li>
-<li>高容错性：失败任务自动重新分配</li>
-<li>高扩展性：可拓展节点</li>
-<li>高效性：在mapreduce思想下，hadoop是并行工作的</li>
-</ul>
-<h2 id="5、hadoop-1-x和2-x区别【组成架构】"><a href="#5、hadoop-1-x和2-x区别【组成架构】" class="headerlink" title="5、hadoop 1.x和2.x区别【组成架构】"></a>5、hadoop 1.x和2.x区别【组成架构】</h2><ul>
-<li>1.x<ul>
-<li>mapreduce 计算 + 资源调度 </li>
-<li>hdfs 存储</li>
-<li>common 辅助工具</li>
-</ul>
-</li>
-<li>2.x 【模块化，解耦】<ul>
-<li>hdfs 存储</li>
-<li>yarn 资源调度</li>
-<li>mapreduce 计算</li>
-<li>common 辅助工具</li>
-</ul>
-</li>
-</ul>
-<h2 id="6、hdfs-组成"><a href="#6、hdfs-组成" class="headerlink" title="6、hdfs 组成:"></a>6、hdfs 组成:</h2><ul>
-<li>namenode: 存储元数据 </li>
-<li>datanode： 存储块数据，checksum<ul>
-<li>secondary namenode【2NN】：每隔一段时间获取hdfs元数据的快照，辅助namenode工作，如checkpoint</li>
-</ul>
-</li>
-</ul>
-<h2 id="7、yarn-组成"><a href="#7、yarn-组成" class="headerlink" title="7、yarn 组成"></a>7、yarn 组成</h2><ul>
-<li>resourcemanager: 资源调度总闸</li>
-<li>nodemanager：每台机器的资源管理</li>
-<li>applicationMaster</li>
-<li>container</li>
-</ul>
-<h2 id="8、mapreduce-组成"><a href="#8、mapreduce-组成" class="headerlink" title="8、mapreduce 组成"></a>8、mapreduce 组成</h2><ul>
-<li>map：并行处理输入数据</li>
-<li>reduce：数据汇总</li>
-</ul>
-<h2 id="9、大数据生态体系"><a href="#9、大数据生态体系" class="headerlink" title="9、大数据生态体系"></a>9、大数据生态体系</h2><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064243.png" alt="image-20200611215224250"></p>
-<ol>
-<li><p>Sqoop：Sqoop是一款开源的工具，主要用于在Hadoop、Hive与传统的数据库(MySql)间进行数据的传递，可以将一个关系型数据库（例如 ：MySQL，Oracle 等）中的数据导进到Hadoop的HDFS中，也可以将HDFS的数据导进到关系型数据库中。</p>
-</li>
-<li><p>Flume：Flume是Cloudera提供的一个高可用的，高可靠的，分布式的海量日志采集、聚合和传输的系统，Flume支持在日志系统中定制各类数据发送方，用于收集数据；同时，Flume提供对数据进行简单处理，并写到各种数据接受方（可定制）的能力。</p>
-</li>
-<li><p>Kafka：Kafka是一种高吞吐量的分布式发布订阅消息系统，有如下特性：<br>（1）通过O(1)的磁盘数据结构提供消息的持久化，这种结构对于即使数以TB的消息存储也能够保持长时间的稳定性能。<br>（2）高吞吐量：即使是非常普通的硬件Kafka也可以支持每秒数百万的消息。<br>（3）支持通过Kafka服务器和消费机集群来分区消息。<br>（4）支持Hadoop并行数据加载。</p>
-</li>
-<li><p>Storm：Storm用于“连续计算”，对数据流做连续查询，在计算时就将结果以流的形式输出给用户。</p>
-</li>
-<li><p>Spark：Spark是当前最流行的开源大数据内存计算框架。可以基于Hadoop上存储的大数据进行计算。</p>
-</li>
-<li><p>Oozie：Oozie是一个管理Hdoop作业（job）的工作流程调度管理系统。</p>
-</li>
-<li><p>Hbase：HBase是一个分布式的、面向列的开源数据库。HBase不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库。</p>
-</li>
-<li><p>Hive：Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供简单的SQL查询功能，可以将SQL语句转换为MapReduce任务进行运行。 其优点是学习成本低，可以通过类SQL语句快速实现简单的MapReduce统计，不必开发专门的MapReduce应用，十分适合数据仓库的统计分析。</p>
-</li>
-<li><p>R语言：R是用于统计分析、绘图的语言和操作环境。R是属于GNU系统的一个自由、免费、源代码开放的软件，它是一个用于统计计算和统计制图的优秀工具。</p>
-</li>
-<li><p>Mahout：Apache Mahout是个可扩展的机器学习和数据挖掘库。</p>
-</li>
-<li><p>ZooKeeper：Zookeeper是Google的Chubby一个开源的实现。它是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、 分布式同步、组服务等。ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。</p>
-</li>
-</ol>
-<h1 id="2-hadoop环境搭建"><a href="#2-hadoop环境搭建" class="headerlink" title="2. hadoop环境搭建"></a>2. hadoop环境搭建</h1><h2 id="1-虚拟机环境准备"><a href="#1-虚拟机环境准备" class="headerlink" title="1. 虚拟机环境准备"></a>1. 虚拟机环境准备</h2><ol>
-<li>克隆虚拟机<ol>
-<li>主机名</li>
-<li>静态Ip</li>
-<li>物理ip</li>
-<li>防火墙</li>
-<li>网络服务</li>
-<li>主机映射</li>
-<li>ntp时间同步</li>
-<li>crontab 时间同步任务</li>
-<li>ssh免密登录</li>
-<li>普通用户root权限</li>
-<li>普通用户ssh免密登录</li>
-<li>rsync/xsync同步脚本</li>
-</ol>
-</li>
-</ol>
-<h2 id="2-安装JDK"><a href="#2-安装JDK" class="headerlink" title="2. 安装JDK"></a>2. 安装JDK</h2><ol>
-<li>解压</li>
-<li>配置环境变量</li>
-<li>java -version测试</li>
-</ol>
-<h2 id="3-安装hadoop"><a href="#3-安装hadoop" class="headerlink" title="3. 安装hadoop"></a>3. 安装hadoop</h2><ol>
-<li>解压</li>
-<li>配置环境变量</li>
-<li>配置6个文件</li>
-<li>分发hadoop和环境变量</li>
-<li>格式化namenode</li>
-<li>启动集群 start-dfs.sh start-yarn.sh</li>
-<li>测试、web测试50070，8088</li>
-</ol>
-<h2 id="3-配置历史服务器"><a href="#3-配置历史服务器" class="headerlink" title="3. 配置历史服务器"></a>3. 配置历史服务器</h2><h2 id="4-配置日志聚合"><a href="#4-配置日志聚合" class="headerlink" title="4. 配置日志聚合"></a>4. 配置日志聚合</h2><h1 id="3-hadoop-编译源码"><a href="#3-hadoop-编译源码" class="headerlink" title="3. hadoop 编译源码"></a>3. hadoop 编译源码</h1><ol>
-<li><p>意义：hadoop默认不支持的功能，想要支持，就要编译，实际上是将需要添加的功能的代码包含到 lib/native/, 编译后的hadoop包在/opt/hadoop-2.7.2-src/hadoop-dist/target 例如 想要支持LZO压缩，就要编译,hive中可以支持Snappy压缩</p>
-</li>
-<li><p>centos 保证网络畅通 ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> Ok</p>
-</li>
-<li><p>jar包准备</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jar包准备(hadoop源码、JDK8、maven、ant 、protobuf)</span><br><span class="line">（1）hadoop-2.7.2-src.tar.gz</span><br><span class="line">（2）jdk-8u144-linux-x64.tar.gz</span><br><span class="line">（3）apache-ant-1.9.9-bin.tar.gz（build工具，打包用的）</span><br><span class="line">（4）apache-maven-3.0.5-bin.tar.gz</span><br><span class="line">（5）protobuf-2.5.0.tar.gz（序列化的框架）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压jdk，环境变量， java -version</p>
-</li>
-<li><p>解压maven，配置mirros,环境变量 , mvn - version</p>
-</li>
-<li><p>解压ant，环境变量， ant-version</p>
-</li>
-<li><p>安装 glibc-headers  和 g++  yum -y install ….</p>
-</li>
-<li><p>解压protobuf,进入configure/ ,</p>
-<ul>
-<li><p>执行 </p>
-<ul>
-<li>make</li>
-<li>make check</li>
-<li>make install</li>
-<li>ldconfig</li>
-</ul>
-</li>
-<li><p>配置环境变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#LD_LIBRARY_PATH</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/opt/module/protobuf-2.5.0</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-</li>
-</ol>
-<ol start="8">
-<li><p>安装openssl库 </p>
-<ul>
-<li>yum install openssl-devel</li>
-</ul>
-</li>
-<li><p>安装 ncurses-devel库</p>
-</li>
-</ol>
-<ul>
-<li>yum install ncurses-devel</li>
-</ul>
-<ol start="10">
-<li>解压hadoop进入主目录</li>
-</ol>
-<ul>
-<li>mvn package -Pdist,native -DskipTests -Dtar</li>
-</ul>
-<ol start="11">
-<li>成功的64位hadoop包在==<strong>/opt/hadoop-2.7.2-src/hadoop-dist/target</strong>==下</li>
-</ol>
-<h1 id="4-hdfs概述"><a href="#4-hdfs概述" class="headerlink" title="4. hdfs概述"></a>4. hdfs概述</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h2><ul>
-<li>hdfs是 Hadoop Distributed File System ， 分布式文件管理系统</li>
-<li>适用于一次写入，多次读出的场景</li>
-</ul>
-<h2 id="2-优缺点"><a href="#2-优缺点" class="headerlink" title="2. 优缺点"></a>2. 优缺点</h2><ul>
-<li>优点<ul>
-<li>高容错： 自动保存多个副本，丢失自动回复</li>
-<li>适合处理大量大数据：能处理 GB，TB，PB级别的数据</li>
-<li>可以构建在廉价的机器上，通过多副本机制提高可靠性</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>不适合处理大量小文件</li>
-<li>不适合低延时数据访问</li>
-<li>不支持并发写入，一个文件只能同时一个写，随机修改，只支持追加</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-架构"><a href="#3-架构" class="headerlink" title="3. 架构"></a>3. 架构</h2><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064244.png" alt="image-20200611225021273"></p>
-<p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064245.png" alt="image-20200611225114473"></p>
-<h2 id="4-hdfs块大小"><a href="#4-hdfs块大小" class="headerlink" title="4. hdfs块大小"></a>4. hdfs块大小</h2><ul>
-<li>1.x 默认64MB</li>
-<li>2.x默认 128MB</li>
-<li>块大小取决于磁盘传输速率，一般的磁盘读写100MB/s，磁盘性能好的可以设置256MB</li>
-<li>块调大，有利于寻址，增加查询效率，寻址时间是读写事件的1%时，效率最高</li>
-<li>块设太小，增加寻址时间，程序一直在寻找块的开始位置</li>
-<li>块设太大，磁盘传输这个Block时间明显高于查找时间，程序变慢</li>
-</ul>
-<h1 id="5-hdfs-shell"><a href="#5-hdfs-shell" class="headerlink" title="5. hdfs shell"></a>5. hdfs shell</h1><ul>
-<li><p>执行命令有两种</p>
-</li>
-<li><p>hdfs dfs -ls /</p>
-</li>
-<li><p>hadoop fs -lsr /</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. hadoop fs ...  ==  hdfs dfs ...</span><br><span class="line">2. -lsr 递归查看</span><br><span class="line">3. -mkdir -p  创建多层目录</span><br><span class="line">4. -moveFromLocal == -put上传</span><br><span class="line">5. -appendToFile 追加</span><br><span class="line">6. -copyToLocal == -get  下载</span><br><span class="line">7. -getmerge 合并一个文件夹下的所有文件并复制</span><br><span class="line">8. -du -h -s  只显示大小</span><br><span class="line">9. -setrep 2 /a.txt 设置文件副本数  set replication</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h1 id="6-hdfs-api"><a href="#6-hdfs-api" class="headerlink" title="6. hdfs api"></a>6. hdfs api</h1><ol>
-<li>加压hadoop</li>
-<li>配置环境边浪</li>
-<li>创建maven，导入依赖，配置loj4j</li>
-<li>上传下载创建删除</li>
-<li>查看文件详细信息</li>
-<li>定位下载</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.8.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-common<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-hdfs<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>jdk.tools<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jdk.tools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>system<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">systemPath</span>&gt;</span>$&#123;JAVA_HOME&#125;/lib/tools.jar<span class="tag">&lt;/<span class="name">systemPath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">INFO, stdout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>=<span class="string">%d %p [%c] - %m%n</span></span><br><span class="line"><span class="meta">log4j.appender.logfile</span>=<span class="string">org.apache.log4j.FileAppender</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.File</span>=<span class="string">target/spring.log</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.layout.ConversionPattern</span>=<span class="string">%d %p [%c] - %m%n</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="7-hdfs读写数据流程"><a href="#7-hdfs读写数据流程" class="headerlink" title="7. hdfs读写数据流程"></a>7. hdfs读写数据流程</h1><blockquote>
-<p>写</p>
-<ol>
-<li>实际上也是io操作 </li>
-<li>client 通过 distribute FileSystem向 namenode请求上传文件</li>
-<li>nameNode 判断父目录是否存在，不存在No such dir,若存在</li>
-<li>namenode 判断文件是否存在，若存在，file already exists，若不存在</li>
-<li>namenode 检查可用的datanode节点，选择 距离近，负载低的节点信息返回，例如dn1,2,3</li>
-<li>client 通过fsfileoutputstream向 dn1 请求上传数据第一个block(64/128/256)，</li>
-<li>dn1 收到请求后继续调用 dn2, dn2 – dn3 建立通道，并逐级应答客户端</li>
-<li>client 开始往dn1上传第一个Block,以packet为单位上传，先从磁盘读取放到一个本地内存缓存，</li>
-<li>dn1收到1个packet就像dn2发送,dn2–dn3，dn1每传一个packet会放入一个应答队列，</li>
-<li>当一个Block上传完成，应答队列将数据序列化到磁盘 </li>
-<li>第一个block上传完毕后，client继续上传第二个block,直到所有block上传完成</li>
-<li>关闭Io及fs资源</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>读</p>
-<ol>
-<li>client 向 namenode强求读数据</li>
-<li>namenode 将元数据信息返回给客户端</li>
-<li>client 通过FSInputstream 向指定datanode节点读第一block</li>
-<li>如果这个节点数据完整，一次io读完，之后关闭io</li>
-<li>如果节点数据找不着，向同机架副本读，机架坏了，读另一个机架的副本，</li>
-<li>每个节点读完后io流关闭，读另一个时重新打开</li>
-<li>所有block读完，client将其合并</li>
-</ol>
-</blockquote>
-<h1 id="8-网络拓扑和机架感知"><a href="#8-网络拓扑和机架感知" class="headerlink" title="8. 网络拓扑和机架感知"></a>8. 网络拓扑和机架感知</h1><p>namenode对节点距离的计算：==网络拓扑==： 找共同祖先，举例总和</p>
-<p>机房<br>    集群1 d1<br>        机架1 r1<br>            服务器1 n1                1. d1,r1,n1 到自身的距离是0<br>            服务器2    n2                2. d1.r1.n1 到 d1.r1.n3 距离为2 共同祖先是r1<br>            服务器3 n3                3. d1.r1.n2 到 d2.r2.n5 距离4，共同祖先是机房<br>    集群2 d2<br>        机架2 r2<br>            服务器1 n4<br>            服务器2 n5<br>            服务器3 n6<br>        机架3 r3<br>            服务器1 n4<br>            服务器2 n5<br>            服务器3 n6</p>
-<hr>
-<p>==机架感知==–副本节点选择<br>若3个副本<br>同一机架不同节点放一个<br>不同机架放一个</p>
-<hr>
-<h1 id="9-namenode-工作机制"><a href="#9-namenode-工作机制" class="headerlink" title="9. namenode 工作机制"></a>9. namenode 工作机制</h1><ol>
-<li>namenode启动时加载镜像文件和编辑日志到内存，也就是Hdfs元数据信息</li>
-<li>client 对数据增删改，对元数据更新，记录操作日志，更新滚动日志 edits_inprogress_001 edits_001</li>
-<li>内存数据更新</li>
-<li>一定条件，触发2NN的checkpoint,copy namenode 的 fsimage &amp; edits to 2NN,加载到内存合并生成新的镜像文件fsimage.chkpoint</li>
-<li>2NN copy fsimage.chkpoint to namenode &amp; rename to faimage</li>
-</ol>
-<p>1个block的元数据信息在内存中占150字节（byte）,一般的服务器为128G，也有256G<br>namenode元数据 存入内存、、磁盘(fsimage)、、edits、、定期合并、、2NN<br>2NN checkpoint,对namenode的元数据信息进行整理，对fsimage镜像和edits编辑日志进行合并<br>    满足 定时时间 一般1小时<br>    或满足 edits数据100w条，就执行checkpoint<br>合并细节：<br>    1. 滚动正在写的edits_inprogress_001编辑日志文件，生成新的edits_inprogress_002文件,将001改名edits_001<br>    2. 将edits1和fsimage拷贝到2NN将数据加载到内存进行合并，生成新的镜像文件fsimage.chkpoint<br>    3. 将fsimage.chkpoint拷贝到namenode重命名为fsimage</p>
-<h1 id="10-fsiamge和edits"><a href="#10-fsiamge和edits" class="headerlink" title="10. fsiamge和edits"></a>10. fsiamge和edits</h1><ol>
-<li>namenode格式化后，生成 <ul>
-<li>fsimage_00000</li>
-<li>fsimage_00000.md5</li>
-<li>seen_txid</li>
-</ul>
-</li>
-<li>增删改时<ul>
-<li>edits_inprogress_0001</li>
-</ul>
-</li>
-<li>合并后<ul>
-<li>fsimage-00000</li>
-<li>edit_00001</li>
-<li>edit_inprogress_002</li>
-<li>seen – 002</li>
-<li>2NN上也会存放一份</li>
-</ul>
-</li>
-<li>查看fsimage和edits文件<ul>
-<li>fsimage:   hdfs oiv -p XML -i 镜像文件 -o 转换后的路径</li>
-<li>edits : hdfs oev -p XML -i edits文件 -o 转换后路径</li>
-</ul>
-</li>
-</ol>
-<h1 id="11-checkpoint"><a href="#11-checkpoint" class="headerlink" title="11. checkpoint"></a>11. checkpoint</h1><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064246.png" alt="image-20200612094603509"></p>
-<h1 id="12-常见端口"><a href="#12-常见端口" class="headerlink" title="12. 常见端口"></a>12. 常见端口</h1><ol>
-<li>50070  web-hdfs</li>
-<li>8088 web-mr</li>
-<li>19888 web-history-server</li>
-<li>9000 client-hadoop-cluster</li>
-</ol>
-
+        <h1 id="1-hadoop简介"><a href="#1-hadoop简介" class="headerlink" title="1. hadoop简介"></a>1. hadoop简介</h1>
+        
+          <a class="article-more-a" href="/2019/03/29/hadoop2/#more">more >></a>
+        
       
 
       
@@ -589,7 +295,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/29/hadoop3/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/29/hadoop2/">展开全文 >></a>
         </p>
       
 
@@ -643,304 +349,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="1-hadoop简介"><a href="#1-hadoop简介" class="headerlink" title="1. hadoop简介"></a>1. hadoop简介</h1><h2 id="1、作用"><a href="#1、作用" class="headerlink" title="1、作用"></a>1、作用</h2><ul>
-<li>主要解决海量数据的存储和分析计算</li>
-</ul>
-<h2 id="2、历史"><a href="#2、历史" class="headerlink" title="2、历史"></a>2、历史</h2><ul>
-<li><p>2006.3 hadoop产生</p>
-</li>
-<li><p>源于google的三篇论文</p>
-</li>
-<li><p>GFS – HDFS</p>
-</li>
-<li><p>MAP-REDUCE – MAPREDUCE</p>
-</li>
-<li><p>BIGTABLE – HBASE</p>
-</li>
-</ul>
-<h2 id="3、三大版本"><a href="#3、三大版本" class="headerlink" title="3、三大版本"></a>3、三大版本</h2><ul>
-<li>apache 原始版本</li>
-<li>cloudera  大型企业用</li>
-<li>hortonworks 文档较好</li>
-</ul>
-<h2 id="4、4大优势"><a href="#4、4大优势" class="headerlink" title="4、4大优势"></a>4、4大优势</h2><ul>
-<li>高可靠性：多个副本</li>
-<li>高容错性：失败任务自动重新分配</li>
-<li>高扩展性：可拓展节点</li>
-<li>高效性：在mapreduce思想下，hadoop是并行工作的</li>
-</ul>
-<h2 id="5、hadoop-1-x和2-x区别【组成架构】"><a href="#5、hadoop-1-x和2-x区别【组成架构】" class="headerlink" title="5、hadoop 1.x和2.x区别【组成架构】"></a>5、hadoop 1.x和2.x区别【组成架构】</h2><ul>
-<li>1.x<ul>
-<li>mapreduce 计算 + 资源调度 </li>
-<li>hdfs 存储</li>
-<li>common 辅助工具</li>
-</ul>
-</li>
-<li>2.x 【模块化，解耦】<ul>
-<li>hdfs 存储</li>
-<li>yarn 资源调度</li>
-<li>mapreduce 计算</li>
-<li>common 辅助工具</li>
-</ul>
-</li>
-</ul>
-<h2 id="6、hdfs-组成"><a href="#6、hdfs-组成" class="headerlink" title="6、hdfs 组成:"></a>6、hdfs 组成:</h2><ul>
-<li>namenode: 存储元数据 </li>
-<li>datanode： 存储块数据，checksum<ul>
-<li>secondary namenode【2NN】：每隔一段时间获取hdfs元数据的快照，辅助namenode工作，如checkpoint</li>
-</ul>
-</li>
-</ul>
-<h2 id="7、yarn-组成"><a href="#7、yarn-组成" class="headerlink" title="7、yarn 组成"></a>7、yarn 组成</h2><ul>
-<li>resourcemanager: 资源调度总闸</li>
-<li>nodemanager：每台机器的资源管理</li>
-<li>applicationMaster</li>
-<li>container</li>
-</ul>
-<h2 id="8、mapreduce-组成"><a href="#8、mapreduce-组成" class="headerlink" title="8、mapreduce 组成"></a>8、mapreduce 组成</h2><ul>
-<li>map：并行处理输入数据</li>
-<li>reduce：数据汇总</li>
-</ul>
-<h2 id="9、大数据生态体系"><a href="#9、大数据生态体系" class="headerlink" title="9、大数据生态体系"></a>9、大数据生态体系</h2><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064243.png" alt="image-20200611215224250"></p>
-<ol>
-<li><p>Sqoop：Sqoop是一款开源的工具，主要用于在Hadoop、Hive与传统的数据库(MySql)间进行数据的传递，可以将一个关系型数据库（例如 ：MySQL，Oracle 等）中的数据导进到Hadoop的HDFS中，也可以将HDFS的数据导进到关系型数据库中。</p>
-</li>
-<li><p>Flume：Flume是Cloudera提供的一个高可用的，高可靠的，分布式的海量日志采集、聚合和传输的系统，Flume支持在日志系统中定制各类数据发送方，用于收集数据；同时，Flume提供对数据进行简单处理，并写到各种数据接受方（可定制）的能力。</p>
-</li>
-<li><p>Kafka：Kafka是一种高吞吐量的分布式发布订阅消息系统，有如下特性：<br>（1）通过O(1)的磁盘数据结构提供消息的持久化，这种结构对于即使数以TB的消息存储也能够保持长时间的稳定性能。<br>（2）高吞吐量：即使是非常普通的硬件Kafka也可以支持每秒数百万的消息。<br>（3）支持通过Kafka服务器和消费机集群来分区消息。<br>（4）支持Hadoop并行数据加载。</p>
-</li>
-<li><p>Storm：Storm用于“连续计算”，对数据流做连续查询，在计算时就将结果以流的形式输出给用户。</p>
-</li>
-<li><p>Spark：Spark是当前最流行的开源大数据内存计算框架。可以基于Hadoop上存储的大数据进行计算。</p>
-</li>
-<li><p>Oozie：Oozie是一个管理Hdoop作业（job）的工作流程调度管理系统。</p>
-</li>
-<li><p>Hbase：HBase是一个分布式的、面向列的开源数据库。HBase不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库。</p>
-</li>
-<li><p>Hive：Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供简单的SQL查询功能，可以将SQL语句转换为MapReduce任务进行运行。 其优点是学习成本低，可以通过类SQL语句快速实现简单的MapReduce统计，不必开发专门的MapReduce应用，十分适合数据仓库的统计分析。</p>
-</li>
-<li><p>R语言：R是用于统计分析、绘图的语言和操作环境。R是属于GNU系统的一个自由、免费、源代码开放的软件，它是一个用于统计计算和统计制图的优秀工具。</p>
-</li>
-<li><p>Mahout：Apache Mahout是个可扩展的机器学习和数据挖掘库。</p>
-</li>
-<li><p>ZooKeeper：Zookeeper是Google的Chubby一个开源的实现。它是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、 分布式同步、组服务等。ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。</p>
-</li>
-</ol>
-<h1 id="2-hadoop环境搭建"><a href="#2-hadoop环境搭建" class="headerlink" title="2. hadoop环境搭建"></a>2. hadoop环境搭建</h1><h2 id="1-虚拟机环境准备"><a href="#1-虚拟机环境准备" class="headerlink" title="1. 虚拟机环境准备"></a>1. 虚拟机环境准备</h2><ol>
-<li>克隆虚拟机<ol>
-<li>主机名</li>
-<li>静态Ip</li>
-<li>物理ip</li>
-<li>防火墙</li>
-<li>网络服务</li>
-<li>主机映射</li>
-<li>ntp时间同步</li>
-<li>crontab 时间同步任务</li>
-<li>ssh免密登录</li>
-<li>普通用户root权限</li>
-<li>普通用户ssh免密登录</li>
-<li>rsync/xsync同步脚本</li>
-</ol>
-</li>
-</ol>
-<h2 id="2-安装JDK"><a href="#2-安装JDK" class="headerlink" title="2. 安装JDK"></a>2. 安装JDK</h2><ol>
-<li>解压</li>
-<li>配置环境变量</li>
-<li>java -version测试</li>
-</ol>
-<h2 id="3-安装hadoop"><a href="#3-安装hadoop" class="headerlink" title="3. 安装hadoop"></a>3. 安装hadoop</h2><ol>
-<li>解压</li>
-<li>配置环境变量</li>
-<li>配置6个文件</li>
-<li>分发hadoop和环境变量</li>
-<li>格式化namenode</li>
-<li>启动集群 start-dfs.sh start-yarn.sh</li>
-<li>测试、web测试50070，8088</li>
-</ol>
-<h2 id="3-配置历史服务器"><a href="#3-配置历史服务器" class="headerlink" title="3. 配置历史服务器"></a>3. 配置历史服务器</h2><h2 id="4-配置日志聚合"><a href="#4-配置日志聚合" class="headerlink" title="4. 配置日志聚合"></a>4. 配置日志聚合</h2><h1 id="3-hadoop-编译源码"><a href="#3-hadoop-编译源码" class="headerlink" title="3. hadoop 编译源码"></a>3. hadoop 编译源码</h1><ol>
-<li><p>意义：hadoop默认不支持的功能，想要支持，就要编译，实际上是将需要添加的功能的代码包含到 lib/native/, 编译后的hadoop包在/opt/hadoop-2.7.2-src/hadoop-dist/target 例如 想要支持LZO压缩，就要编译,hive中可以支持Snappy压缩</p>
-</li>
-<li><p>centos 保证网络畅通 ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> Ok</p>
-</li>
-<li><p>jar包准备</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jar包准备(hadoop源码、JDK8、maven、ant 、protobuf)</span><br><span class="line">（1）hadoop-2.7.2-src.tar.gz</span><br><span class="line">（2）jdk-8u144-linux-x64.tar.gz</span><br><span class="line">（3）apache-ant-1.9.9-bin.tar.gz（build工具，打包用的）</span><br><span class="line">（4）apache-maven-3.0.5-bin.tar.gz</span><br><span class="line">（5）protobuf-2.5.0.tar.gz（序列化的框架）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压jdk，环境变量， java -version</p>
-</li>
-<li><p>解压maven，配置mirros,环境变量 , mvn - version</p>
-</li>
-<li><p>解压ant，环境变量， ant-version</p>
-</li>
-<li><p>安装 glibc-headers  和 g++  yum -y install ….</p>
-</li>
-<li><p>解压protobuf,进入configure/ ,</p>
-<ul>
-<li><p>执行 </p>
-<ul>
-<li>make</li>
-<li>make check</li>
-<li>make install</li>
-<li>ldconfig</li>
-</ul>
-</li>
-<li><p>配置环境变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#LD_LIBRARY_PATH</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/opt/module/protobuf-2.5.0</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-</li>
-</ol>
-<ol start="8">
-<li><p>安装openssl库 </p>
-<ul>
-<li>yum install openssl-devel</li>
-</ul>
-</li>
-<li><p>安装 ncurses-devel库</p>
-</li>
-</ol>
-<ul>
-<li>yum install ncurses-devel</li>
-</ul>
-<ol start="10">
-<li>解压hadoop进入主目录</li>
-</ol>
-<ul>
-<li>mvn package -Pdist,native -DskipTests -Dtar</li>
-</ul>
-<ol start="11">
-<li>成功的64位hadoop包在==<strong>/opt/hadoop-2.7.2-src/hadoop-dist/target</strong>==下</li>
-</ol>
-<h1 id="4-hdfs概述"><a href="#4-hdfs概述" class="headerlink" title="4. hdfs概述"></a>4. hdfs概述</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h2><ul>
-<li>hdfs是 Hadoop Distributed File System ， 分布式文件管理系统</li>
-<li>适用于一次写入，多次读出的场景</li>
-</ul>
-<h2 id="2-优缺点"><a href="#2-优缺点" class="headerlink" title="2. 优缺点"></a>2. 优缺点</h2><ul>
-<li>优点<ul>
-<li>高容错： 自动保存多个副本，丢失自动回复</li>
-<li>适合处理大量大数据：能处理 GB，TB，PB级别的数据</li>
-<li>可以构建在廉价的机器上，通过多副本机制提高可靠性</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>不适合处理大量小文件</li>
-<li>不适合低延时数据访问</li>
-<li>不支持并发写入，一个文件只能同时一个写，随机修改，只支持追加</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-架构"><a href="#3-架构" class="headerlink" title="3. 架构"></a>3. 架构</h2><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064244.png" alt="image-20200611225021273"></p>
-<p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064245.png" alt="image-20200611225114473"></p>
-<h2 id="4-hdfs块大小"><a href="#4-hdfs块大小" class="headerlink" title="4. hdfs块大小"></a>4. hdfs块大小</h2><ul>
-<li>1.x 默认64MB</li>
-<li>2.x默认 128MB</li>
-<li>块大小取决于磁盘传输速率，一般的磁盘读写100MB/s，磁盘性能好的可以设置256MB</li>
-<li>块调大，有利于寻址，增加查询效率，寻址时间是读写事件的1%时，效率最高</li>
-<li>块设太小，增加寻址时间，程序一直在寻找块的开始位置</li>
-<li>块设太大，磁盘传输这个Block时间明显高于查找时间，程序变慢</li>
-</ul>
-<h1 id="5-hdfs-shell"><a href="#5-hdfs-shell" class="headerlink" title="5. hdfs shell"></a>5. hdfs shell</h1><ul>
-<li><p>执行命令有两种</p>
-</li>
-<li><p>hdfs dfs -ls /</p>
-</li>
-<li><p>hadoop fs -lsr /</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. hadoop fs ...  ==  hdfs dfs ...</span><br><span class="line">2. -lsr 递归查看</span><br><span class="line">3. -mkdir -p  创建多层目录</span><br><span class="line">4. -moveFromLocal == -put上传</span><br><span class="line">5. -appendToFile 追加</span><br><span class="line">6. -copyToLocal == -get  下载</span><br><span class="line">7. -getmerge 合并一个文件夹下的所有文件并复制</span><br><span class="line">8. -du -h -s  只显示大小</span><br><span class="line">9. -setrep 2 /a.txt 设置文件副本数  set replication</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h1 id="6-hdfs-api"><a href="#6-hdfs-api" class="headerlink" title="6. hdfs api"></a>6. hdfs api</h1><ol>
-<li>加压hadoop</li>
-<li>配置环境边浪</li>
-<li>创建maven，导入依赖，配置loj4j</li>
-<li>上传下载创建删除</li>
-<li>查看文件详细信息</li>
-<li>定位下载</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.8.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-common<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-hdfs<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>jdk.tools<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jdk.tools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>system<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">systemPath</span>&gt;</span>$&#123;JAVA_HOME&#125;/lib/tools.jar<span class="tag">&lt;/<span class="name">systemPath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">INFO, stdout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>=<span class="string">%d %p [%c] - %m%n</span></span><br><span class="line"><span class="meta">log4j.appender.logfile</span>=<span class="string">org.apache.log4j.FileAppender</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.File</span>=<span class="string">target/spring.log</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.layout.ConversionPattern</span>=<span class="string">%d %p [%c] - %m%n</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="7-hdfs读写数据流程"><a href="#7-hdfs读写数据流程" class="headerlink" title="7. hdfs读写数据流程"></a>7. hdfs读写数据流程</h1><blockquote>
-<p>写</p>
-<ol>
-<li>实际上也是io操作 </li>
-<li>client 通过 distribute FileSystem向 namenode请求上传文件</li>
-<li>nameNode 判断父目录是否存在，不存在No such dir,若存在</li>
-<li>namenode 判断文件是否存在，若存在，file already exists，若不存在</li>
-<li>namenode 检查可用的datanode节点，选择 距离近，负载低的节点信息返回，例如dn1,2,3</li>
-<li>client 通过fsfileoutputstream向 dn1 请求上传数据第一个block(64/128/256)，</li>
-<li>dn1 收到请求后继续调用 dn2, dn2 – dn3 建立通道，并逐级应答客户端</li>
-<li>client 开始往dn1上传第一个Block,以packet为单位上传，先从磁盘读取放到一个本地内存缓存，</li>
-<li>dn1收到1个packet就像dn2发送,dn2–dn3，dn1每传一个packet会放入一个应答队列，</li>
-<li>当一个Block上传完成，应答队列将数据序列化到磁盘 </li>
-<li>第一个block上传完毕后，client继续上传第二个block,直到所有block上传完成</li>
-<li>关闭Io及fs资源</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>读</p>
-<ol>
-<li>client 向 namenode强求读数据</li>
-<li>namenode 将元数据信息返回给客户端</li>
-<li>client 通过FSInputstream 向指定datanode节点读第一block</li>
-<li>如果这个节点数据完整，一次io读完，之后关闭io</li>
-<li>如果节点数据找不着，向同机架副本读，机架坏了，读另一个机架的副本，</li>
-<li>每个节点读完后io流关闭，读另一个时重新打开</li>
-<li>所有block读完，client将其合并</li>
-</ol>
-</blockquote>
-<h1 id="8-网络拓扑和机架感知"><a href="#8-网络拓扑和机架感知" class="headerlink" title="8. 网络拓扑和机架感知"></a>8. 网络拓扑和机架感知</h1><p>namenode对节点距离的计算：==网络拓扑==： 找共同祖先，举例总和</p>
-<p>机房<br>    集群1 d1<br>        机架1 r1<br>            服务器1 n1                1. d1,r1,n1 到自身的距离是0<br>            服务器2    n2                2. d1.r1.n1 到 d1.r1.n3 距离为2 共同祖先是r1<br>            服务器3 n3                3. d1.r1.n2 到 d2.r2.n5 距离4，共同祖先是机房<br>    集群2 d2<br>        机架2 r2<br>            服务器1 n4<br>            服务器2 n5<br>            服务器3 n6<br>        机架3 r3<br>            服务器1 n4<br>            服务器2 n5<br>            服务器3 n6</p>
-<hr>
-<p>==机架感知==–副本节点选择<br>若3个副本<br>同一机架不同节点放一个<br>不同机架放一个</p>
-<hr>
-<h1 id="9-namenode-工作机制"><a href="#9-namenode-工作机制" class="headerlink" title="9. namenode 工作机制"></a>9. namenode 工作机制</h1><ol>
-<li>namenode启动时加载镜像文件和编辑日志到内存，也就是Hdfs元数据信息</li>
-<li>client 对数据增删改，对元数据更新，记录操作日志，更新滚动日志 edits_inprogress_001 edits_001</li>
-<li>内存数据更新</li>
-<li>一定条件，触发2NN的checkpoint,copy namenode 的 fsimage &amp; edits to 2NN,加载到内存合并生成新的镜像文件fsimage.chkpoint</li>
-<li>2NN copy fsimage.chkpoint to namenode &amp; rename to faimage</li>
-</ol>
-<p>1个block的元数据信息在内存中占150字节（byte）,一般的服务器为128G，也有256G<br>namenode元数据 存入内存、、磁盘(fsimage)、、edits、、定期合并、、2NN<br>2NN checkpoint,对namenode的元数据信息进行整理，对fsimage镜像和edits编辑日志进行合并<br>    满足 定时时间 一般1小时<br>    或满足 edits数据100w条，就执行checkpoint<br>合并细节：<br>    1. 滚动正在写的edits_inprogress_001编辑日志文件，生成新的edits_inprogress_002文件,将001改名edits_001<br>    2. 将edits1和fsimage拷贝到2NN将数据加载到内存进行合并，生成新的镜像文件fsimage.chkpoint<br>    3. 将fsimage.chkpoint拷贝到namenode重命名为fsimage</p>
-<h1 id="10-fsiamge和edits"><a href="#10-fsiamge和edits" class="headerlink" title="10. fsiamge和edits"></a>10. fsiamge和edits</h1><ol>
-<li>namenode格式化后，生成 <ul>
-<li>fsimage_00000</li>
-<li>fsimage_00000.md5</li>
-<li>seen_txid</li>
-</ul>
-</li>
-<li>增删改时<ul>
-<li>edits_inprogress_0001</li>
-</ul>
-</li>
-<li>合并后<ul>
-<li>fsimage-00000</li>
-<li>edit_00001</li>
-<li>edit_inprogress_002</li>
-<li>seen – 002</li>
-<li>2NN上也会存放一份</li>
-</ul>
-</li>
-<li>查看fsimage和edits文件<ul>
-<li>fsimage:   hdfs oiv -p XML -i 镜像文件 -o 转换后的路径</li>
-<li>edits : hdfs oev -p XML -i edits文件 -o 转换后路径</li>
-</ul>
-</li>
-</ol>
-<h1 id="11-checkpoint"><a href="#11-checkpoint" class="headerlink" title="11. checkpoint"></a>11. checkpoint</h1><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064246.png" alt="image-20200612094603509"></p>
-<h1 id="12-常见端口"><a href="#12-常见端口" class="headerlink" title="12. 常见端口"></a>12. 常见端口</h1><ol>
-<li>50070  web-hdfs</li>
-<li>8088 web-mr</li>
-<li>19888 web-history-server</li>
-<li>9000 client-hadoop-cluster</li>
-</ol>
-
+<li><p>主要解决海量数据的存储和分析计算</p>
+        
+          <a class="article-more-a" href="/2019/03/29/hadoop/#more">more >></a>
+        
       
 
       
@@ -982,19 +394,19 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-hadoop2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hadoop3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/29/hadoop2/">hadoop2</a>
+      <a class="article-title" href="/2019/03/29/hadoop3/">hadoop3</a>
     </h1>
   
 
         
-        <a href="/2019/03/29/hadoop2/" class="archive-article-date">
+        <a href="/2019/03/29/hadoop3/" class="archive-article-date">
   	<time datetime="2019-03-29T07:03:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-29</time>
 </a>
         
@@ -1009,301 +421,15 @@ var _hmt = _hmt || [];
 <li>主要解决海量数据的存储和分析计算</li>
 </ul>
 <h2 id="2、历史"><a href="#2、历史" class="headerlink" title="2、历史"></a>2、历史</h2><ul>
-<li><p>2006.3 hadoop产生</p>
-</li>
-<li><p>源于google的三篇论文</p>
-</li>
-<li><p>GFS – HDFS</p>
-</li>
-<li><p>MAP-REDUCE – MAPREDUCE</p>
-</li>
-<li><p>BIGTABLE – HBASE</p>
-</li>
+<li>2006.3 hadoop产生</li>
+<li>源于google的三篇论文</li>
+<li>GFS – HDFS</li>
+<li>MAP-REDUCE – MAPREDUCE</li>
+<li>BIGTABLE – HBASE</li>
 </ul>
-<h2 id="3、三大版本"><a href="#3、三大版本" class="headerlink" title="3、三大版本"></a>3、三大版本</h2><ul>
-<li>apache 原始版本</li>
-<li>cloudera  大型企业用</li>
-<li>hortonworks 文档较好</li>
-</ul>
-<h2 id="4、4大优势"><a href="#4、4大优势" class="headerlink" title="4、4大优势"></a>4、4大优势</h2><ul>
-<li>高可靠性：多个副本</li>
-<li>高容错性：失败任务自动重新分配</li>
-<li>高扩展性：可拓展节点</li>
-<li>高效性：在mapreduce思想下，hadoop是并行工作的</li>
-</ul>
-<h2 id="5、hadoop-1-x和2-x区别【组成架构】"><a href="#5、hadoop-1-x和2-x区别【组成架构】" class="headerlink" title="5、hadoop 1.x和2.x区别【组成架构】"></a>5、hadoop 1.x和2.x区别【组成架构】</h2><ul>
-<li>1.x<ul>
-<li>mapreduce 计算 + 资源调度 </li>
-<li>hdfs 存储</li>
-<li>common 辅助工具</li>
-</ul>
-</li>
-<li>2.x 【模块化，解耦】<ul>
-<li>hdfs 存储</li>
-<li>yarn 资源调度</li>
-<li>mapreduce 计算</li>
-<li>common 辅助工具</li>
-</ul>
-</li>
-</ul>
-<h2 id="6、hdfs-组成"><a href="#6、hdfs-组成" class="headerlink" title="6、hdfs 组成:"></a>6、hdfs 组成:</h2><ul>
-<li>namenode: 存储元数据 </li>
-<li>datanode： 存储块数据，checksum<ul>
-<li>secondary namenode【2NN】：每隔一段时间获取hdfs元数据的快照，辅助namenode工作，如checkpoint</li>
-</ul>
-</li>
-</ul>
-<h2 id="7、yarn-组成"><a href="#7、yarn-组成" class="headerlink" title="7、yarn 组成"></a>7、yarn 组成</h2><ul>
-<li>resourcemanager: 资源调度总闸</li>
-<li>nodemanager：每台机器的资源管理</li>
-<li>applicationMaster</li>
-<li>container</li>
-</ul>
-<h2 id="8、mapreduce-组成"><a href="#8、mapreduce-组成" class="headerlink" title="8、mapreduce 组成"></a>8、mapreduce 组成</h2><ul>
-<li>map：并行处理输入数据</li>
-<li>reduce：数据汇总</li>
-</ul>
-<h2 id="9、大数据生态体系"><a href="#9、大数据生态体系" class="headerlink" title="9、大数据生态体系"></a>9、大数据生态体系</h2><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064243.png" alt="image-20200611215224250"></p>
-<ol>
-<li><p>Sqoop：Sqoop是一款开源的工具，主要用于在Hadoop、Hive与传统的数据库(MySql)间进行数据的传递，可以将一个关系型数据库（例如 ：MySQL，Oracle 等）中的数据导进到Hadoop的HDFS中，也可以将HDFS的数据导进到关系型数据库中。</p>
-</li>
-<li><p>Flume：Flume是Cloudera提供的一个高可用的，高可靠的，分布式的海量日志采集、聚合和传输的系统，Flume支持在日志系统中定制各类数据发送方，用于收集数据；同时，Flume提供对数据进行简单处理，并写到各种数据接受方（可定制）的能力。</p>
-</li>
-<li><p>Kafka：Kafka是一种高吞吐量的分布式发布订阅消息系统，有如下特性：<br>（1）通过O(1)的磁盘数据结构提供消息的持久化，这种结构对于即使数以TB的消息存储也能够保持长时间的稳定性能。<br>（2）高吞吐量：即使是非常普通的硬件Kafka也可以支持每秒数百万的消息。<br>（3）支持通过Kafka服务器和消费机集群来分区消息。<br>（4）支持Hadoop并行数据加载。</p>
-</li>
-<li><p>Storm：Storm用于“连续计算”，对数据流做连续查询，在计算时就将结果以流的形式输出给用户。</p>
-</li>
-<li><p>Spark：Spark是当前最流行的开源大数据内存计算框架。可以基于Hadoop上存储的大数据进行计算。</p>
-</li>
-<li><p>Oozie：Oozie是一个管理Hdoop作业（job）的工作流程调度管理系统。</p>
-</li>
-<li><p>Hbase：HBase是一个分布式的、面向列的开源数据库。HBase不同于一般的关系数据库，它是一个适合于非结构化数据存储的数据库。</p>
-</li>
-<li><p>Hive：Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供简单的SQL查询功能，可以将SQL语句转换为MapReduce任务进行运行。 其优点是学习成本低，可以通过类SQL语句快速实现简单的MapReduce统计，不必开发专门的MapReduce应用，十分适合数据仓库的统计分析。</p>
-</li>
-<li><p>R语言：R是用于统计分析、绘图的语言和操作环境。R是属于GNU系统的一个自由、免费、源代码开放的软件，它是一个用于统计计算和统计制图的优秀工具。</p>
-</li>
-<li><p>Mahout：Apache Mahout是个可扩展的机器学习和数据挖掘库。</p>
-</li>
-<li><p>ZooKeeper：Zookeeper是Google的Chubby一个开源的实现。它是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、 分布式同步、组服务等。ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。</p>
-</li>
-</ol>
-<h1 id="2-hadoop环境搭建"><a href="#2-hadoop环境搭建" class="headerlink" title="2. hadoop环境搭建"></a>2. hadoop环境搭建</h1><h2 id="1-虚拟机环境准备"><a href="#1-虚拟机环境准备" class="headerlink" title="1. 虚拟机环境准备"></a>1. 虚拟机环境准备</h2><ol>
-<li>克隆虚拟机<ol>
-<li>主机名</li>
-<li>静态Ip</li>
-<li>物理ip</li>
-<li>防火墙</li>
-<li>网络服务</li>
-<li>主机映射</li>
-<li>ntp时间同步</li>
-<li>crontab 时间同步任务</li>
-<li>ssh免密登录</li>
-<li>普通用户root权限</li>
-<li>普通用户ssh免密登录</li>
-<li>rsync/xsync同步脚本</li>
-</ol>
-</li>
-</ol>
-<h2 id="2-安装JDK"><a href="#2-安装JDK" class="headerlink" title="2. 安装JDK"></a>2. 安装JDK</h2><ol>
-<li>解压</li>
-<li>配置环境变量</li>
-<li>java -version测试</li>
-</ol>
-<h2 id="3-安装hadoop"><a href="#3-安装hadoop" class="headerlink" title="3. 安装hadoop"></a>3. 安装hadoop</h2><ol>
-<li>解压</li>
-<li>配置环境变量</li>
-<li>配置6个文件</li>
-<li>分发hadoop和环境变量</li>
-<li>格式化namenode</li>
-<li>启动集群 start-dfs.sh start-yarn.sh</li>
-<li>测试、web测试50070，8088</li>
-</ol>
-<h2 id="3-配置历史服务器"><a href="#3-配置历史服务器" class="headerlink" title="3. 配置历史服务器"></a>3. 配置历史服务器</h2><h2 id="4-配置日志聚合"><a href="#4-配置日志聚合" class="headerlink" title="4. 配置日志聚合"></a>4. 配置日志聚合</h2><h1 id="3-hadoop-编译源码"><a href="#3-hadoop-编译源码" class="headerlink" title="3. hadoop 编译源码"></a>3. hadoop 编译源码</h1><ol>
-<li><p>意义：hadoop默认不支持的功能，想要支持，就要编译，实际上是将需要添加的功能的代码包含到 lib/native/, 编译后的hadoop包在/opt/hadoop-2.7.2-src/hadoop-dist/target 例如 想要支持LZO压缩，就要编译,hive中可以支持Snappy压缩</p>
-</li>
-<li><p>centos 保证网络畅通 ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> Ok</p>
-</li>
-<li><p>jar包准备</p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jar包准备(hadoop源码、JDK8、maven、ant 、protobuf)</span><br><span class="line">（1）hadoop-2.7.2-src.tar.gz</span><br><span class="line">（2）jdk-8u144-linux-x64.tar.gz</span><br><span class="line">（3）apache-ant-1.9.9-bin.tar.gz（build工具，打包用的）</span><br><span class="line">（4）apache-maven-3.0.5-bin.tar.gz</span><br><span class="line">（5）protobuf-2.5.0.tar.gz（序列化的框架）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>解压jdk，环境变量， java -version</p>
-</li>
-<li><p>解压maven，配置mirros,环境变量 , mvn - version</p>
-</li>
-<li><p>解压ant，环境变量， ant-version</p>
-</li>
-<li><p>安装 glibc-headers  和 g++  yum -y install ….</p>
-</li>
-<li><p>解压protobuf,进入configure/ ,</p>
-<ul>
-<li><p>执行 </p>
-<ul>
-<li>make</li>
-<li>make check</li>
-<li>make install</li>
-<li>ldconfig</li>
-</ul>
-</li>
-<li><p>配置环境变量</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#LD_LIBRARY_PATH</span></span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH=/opt/module/protobuf-2.5.0</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$LD_LIBRARY_PATH</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-</li>
-</ol>
-<ol start="8">
-<li><p>安装openssl库 </p>
-<ul>
-<li>yum install openssl-devel</li>
-</ul>
-</li>
-<li><p>安装 ncurses-devel库</p>
-</li>
-</ol>
-<ul>
-<li>yum install ncurses-devel</li>
-</ul>
-<ol start="10">
-<li>解压hadoop进入主目录</li>
-</ol>
-<ul>
-<li>mvn package -Pdist,native -DskipTests -Dtar</li>
-</ul>
-<ol start="11">
-<li>成功的64位hadoop包在==<strong>/opt/hadoop-2.7.2-src/hadoop-dist/target</strong>==下</li>
-</ol>
-<h1 id="4-hdfs概述"><a href="#4-hdfs概述" class="headerlink" title="4. hdfs概述"></a>4. hdfs概述</h1><h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h2><ul>
-<li>hdfs是 Hadoop Distributed File System ， 分布式文件管理系统</li>
-<li>适用于一次写入，多次读出的场景</li>
-</ul>
-<h2 id="2-优缺点"><a href="#2-优缺点" class="headerlink" title="2. 优缺点"></a>2. 优缺点</h2><ul>
-<li>优点<ul>
-<li>高容错： 自动保存多个副本，丢失自动回复</li>
-<li>适合处理大量大数据：能处理 GB，TB，PB级别的数据</li>
-<li>可以构建在廉价的机器上，通过多副本机制提高可靠性</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>不适合处理大量小文件</li>
-<li>不适合低延时数据访问</li>
-<li>不支持并发写入，一个文件只能同时一个写，随机修改，只支持追加</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-架构"><a href="#3-架构" class="headerlink" title="3. 架构"></a>3. 架构</h2><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064244.png" alt="image-20200611225021273"></p>
-<p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064245.png" alt="image-20200611225114473"></p>
-<h2 id="4-hdfs块大小"><a href="#4-hdfs块大小" class="headerlink" title="4. hdfs块大小"></a>4. hdfs块大小</h2><ul>
-<li>1.x 默认64MB</li>
-<li>2.x默认 128MB</li>
-<li>块大小取决于磁盘传输速率，一般的磁盘读写100MB/s，磁盘性能好的可以设置256MB</li>
-<li>块调大，有利于寻址，增加查询效率，寻址时间是读写事件的1%时，效率最高</li>
-<li>块设太小，增加寻址时间，程序一直在寻找块的开始位置</li>
-<li>块设太大，磁盘传输这个Block时间明显高于查找时间，程序变慢</li>
-</ul>
-<h1 id="5-hdfs-shell"><a href="#5-hdfs-shell" class="headerlink" title="5. hdfs shell"></a>5. hdfs shell</h1><ul>
-<li><p>执行命令有两种</p>
-</li>
-<li><p>hdfs dfs -ls /</p>
-</li>
-<li><p>hadoop fs -lsr /</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. hadoop fs ...  ==  hdfs dfs ...</span><br><span class="line">2. -lsr 递归查看</span><br><span class="line">3. -mkdir -p  创建多层目录</span><br><span class="line">4. -moveFromLocal == -put上传</span><br><span class="line">5. -appendToFile 追加</span><br><span class="line">6. -copyToLocal == -get  下载</span><br><span class="line">7. -getmerge 合并一个文件夹下的所有文件并复制</span><br><span class="line">8. -du -h -s  只显示大小</span><br><span class="line">9. -setrep 2 /a.txt 设置文件副本数  set replication</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h1 id="6-hdfs-api"><a href="#6-hdfs-api" class="headerlink" title="6. hdfs api"></a>6. hdfs api</h1><ol>
-<li>加压hadoop</li>
-<li>配置环境边浪</li>
-<li>创建maven，导入依赖，配置loj4j</li>
-<li>上传下载创建删除</li>
-<li>查看文件详细信息</li>
-<li>定位下载</li>
-</ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.logging.log4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.8.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-common<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.hadoop<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hadoop-hdfs<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>jdk.tools<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jdk.tools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>system<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">systemPath</span>&gt;</span>$&#123;JAVA_HOME&#125;/lib/tools.jar<span class="tag">&lt;/<span class="name">systemPath</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">INFO, stdout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>=<span class="string">%d %p [%c] - %m%n</span></span><br><span class="line"><span class="meta">log4j.appender.logfile</span>=<span class="string">org.apache.log4j.FileAppender</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.File</span>=<span class="string">target/spring.log</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.logfile.layout.ConversionPattern</span>=<span class="string">%d %p [%c] - %m%n</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="7-hdfs读写数据流程"><a href="#7-hdfs读写数据流程" class="headerlink" title="7. hdfs读写数据流程"></a>7. hdfs读写数据流程</h1><blockquote>
-<p>写</p>
-<ol>
-<li>实际上也是io操作 </li>
-<li>client 通过 distribute FileSystem向 namenode请求上传文件</li>
-<li>nameNode 判断父目录是否存在，不存在No such dir,若存在</li>
-<li>namenode 判断文件是否存在，若存在，file already exists，若不存在</li>
-<li>namenode 检查可用的datanode节点，选择 距离近，负载低的节点信息返回，例如dn1,2,3</li>
-<li>client 通过fsfileoutputstream向 dn1 请求上传数据第一个block(64/128/256)，</li>
-<li>dn1 收到请求后继续调用 dn2, dn2 – dn3 建立通道，并逐级应答客户端</li>
-<li>client 开始往dn1上传第一个Block,以packet为单位上传，先从磁盘读取放到一个本地内存缓存，</li>
-<li>dn1收到1个packet就像dn2发送,dn2–dn3，dn1每传一个packet会放入一个应答队列，</li>
-<li>当一个Block上传完成，应答队列将数据序列化到磁盘 </li>
-<li>第一个block上传完毕后，client继续上传第二个block,直到所有block上传完成</li>
-<li>关闭Io及fs资源</li>
-</ol>
-</blockquote>
-<blockquote>
-<p>读</p>
-<ol>
-<li>client 向 namenode强求读数据</li>
-<li>namenode 将元数据信息返回给客户端</li>
-<li>client 通过FSInputstream 向指定datanode节点读第一block</li>
-<li>如果这个节点数据完整，一次io读完，之后关闭io</li>
-<li>如果节点数据找不着，向同机架副本读，机架坏了，读另一个机架的副本，</li>
-<li>每个节点读完后io流关闭，读另一个时重新打开</li>
-<li>所有block读完，client将其合并</li>
-</ol>
-</blockquote>
-<h1 id="8-网络拓扑和机架感知"><a href="#8-网络拓扑和机架感知" class="headerlink" title="8. 网络拓扑和机架感知"></a>8. 网络拓扑和机架感知</h1><p>namenode对节点距离的计算：==网络拓扑==： 找共同祖先，举例总和</p>
-<p>机房<br>    集群1 d1<br>        机架1 r1<br>            服务器1 n1                1. d1,r1,n1 到自身的距离是0<br>            服务器2    n2                2. d1.r1.n1 到 d1.r1.n3 距离为2 共同祖先是r1<br>            服务器3 n3                3. d1.r1.n2 到 d2.r2.n5 距离4，共同祖先是机房<br>    集群2 d2<br>        机架2 r2<br>            服务器1 n4<br>            服务器2 n5<br>            服务器3 n6<br>        机架3 r3<br>            服务器1 n4<br>            服务器2 n5<br>            服务器3 n6</p>
-<hr>
-<p>==机架感知==–副本节点选择<br>若3个副本<br>同一机架不同节点放一个<br>不同机架放一个</p>
-<hr>
-<h1 id="9-namenode-工作机制"><a href="#9-namenode-工作机制" class="headerlink" title="9. namenode 工作机制"></a>9. namenode 工作机制</h1><ol>
-<li>namenode启动时加载镜像文件和编辑日志到内存，也就是Hdfs元数据信息</li>
-<li>client 对数据增删改，对元数据更新，记录操作日志，更新滚动日志 edits_inprogress_001 edits_001</li>
-<li>内存数据更新</li>
-<li>一定条件，触发2NN的checkpoint,copy namenode 的 fsimage &amp; edits to 2NN,加载到内存合并生成新的镜像文件fsimage.chkpoint</li>
-<li>2NN copy fsimage.chkpoint to namenode &amp; rename to faimage</li>
-</ol>
-<p>1个block的元数据信息在内存中占150字节（byte）,一般的服务器为128G，也有256G<br>namenode元数据 存入内存、、磁盘(fsimage)、、edits、、定期合并、、2NN<br>2NN checkpoint,对namenode的元数据信息进行整理，对fsimage镜像和edits编辑日志进行合并<br>    满足 定时时间 一般1小时<br>    或满足 edits数据100w条，就执行checkpoint<br>合并细节：<br>    1. 滚动正在写的edits_inprogress_001编辑日志文件，生成新的edits_inprogress_002文件,将001改名edits_001<br>    2. 将edits1和fsimage拷贝到2NN将数据加载到内存进行合并，生成新的镜像文件fsimage.chkpoint<br>    3. 将fsimage.chkpoint拷贝到namenode重命名为fsimage</p>
-<h1 id="10-fsiamge和edits"><a href="#10-fsiamge和edits" class="headerlink" title="10. fsiamge和edits"></a>10. fsiamge和edits</h1><ol>
-<li>namenode格式化后，生成 <ul>
-<li>fsimage_00000</li>
-<li>fsimage_00000.md5</li>
-<li>seen_txid</li>
-</ul>
-</li>
-<li>增删改时<ul>
-<li>edits_inprogress_0001</li>
-</ul>
-</li>
-<li>合并后<ul>
-<li>fsimage-00000</li>
-<li>edit_00001</li>
-<li>edit_inprogress_002</li>
-<li>seen – 002</li>
-<li>2NN上也会存放一份</li>
-</ul>
-</li>
-<li>查看fsimage和edits文件<ul>
-<li>fsimage:   hdfs oiv -p XML -i 镜像文件 -o 转换后的路径</li>
-<li>edits : hdfs oev -p XML -i edits文件 -o 转换后路径</li>
-</ul>
-</li>
-</ol>
-<h1 id="11-checkpoint"><a href="#11-checkpoint" class="headerlink" title="11. checkpoint"></a>11. checkpoint</h1><p><img src="https://gitee.com/curryfor369/picgo/raw/master/img/20200909064246.png" alt="image-20200612094603509"></p>
-<h1 id="12-常见端口"><a href="#12-常见端口" class="headerlink" title="12. 常见端口"></a>12. 常见端口</h1><ol>
-<li>50070  web-hdfs</li>
-<li>8088 web-mr</li>
-<li>19888 web-history-server</li>
-<li>9000 client-hadoop-cluster</li>
-</ol>
-
+        
+          <a class="article-more-a" href="/2019/03/29/hadoop3/#more">more >></a>
+        
       
 
       
@@ -1315,7 +441,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/29/hadoop2/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/03/29/hadoop3/">展开全文 >></a>
         </p>
       
 
@@ -1439,11 +565,14 @@ var _hmt = _hmt || [];
     		&copy; 2020 curry
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      		<a href="javascript:;" onclick="alert('Email: nba@iscurry.com')"  target="_blank">Email: nba@iscurry.com</a>
       	</div>
     </div>
   </div>
+
+
 </footer>
+
     </div>
     <script>
 	var yiliaConfig = {
@@ -1467,6 +596,8 @@ if(!isFinite(o.call(this)))throw RangeError("Invalid time value");var t=this,n=t
 return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var e=r(54),i=r(2),o=e.get,u=e.key;e.exp({getOwnMetadata:function(t,n){return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){var e=r(54),i=r(2),o=r(32),u=e.has,c=e.key,f=function(t,n,r){if(u(t,n,r))return!0;var e=o(n);return null!==e&&f(t,e,r)};e.exp({hasMetadata:function(t,n){return f(t,i(n),arguments.length<3?void 0:c(arguments[2]))}})},function(t,n,r){var e=r(54),i=r(2),o=e.has,u=e.key;e.exp({hasOwnMetadata:function(t,n){return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){var e=r(54),i=r(2),o=r(26),u=e.key,c=e.set;e.exp({metadata:function(t,n){return function(r,e){c(t,n,(void 0!==e?i:o)(r),u(e))}}})},function(t,n,r){var e=r(1);e(e.P+e.R,"Set",{toJSON:r(165)("Set")})},function(t,n,r){"use strict";var e=r(1),i=r(147)(!0);e(e.P,"String",{at:function(t){return i(this,t)}})},function(t,n,r){"use strict";var e=r(1),i=r(46),o=r(16),u=r(122),c=r(120),f=RegExp.prototype,a=function(t,n){this._r=t,this._s=n};r(139)(a,"RegExp String",function(){var t=this._r.exec(this._s);return{value:t,done:null===t}}),e(e.P,"String",{matchAll:function(t){if(i(this),!u(t))throw TypeError(t+" is not a regexp!");var n=String(this),r="flags"in f?String(t.flags):c.call(t),e=new RegExp(t.source,~r.indexOf("g")?r:"g"+r);return e.lastIndex=o(t.lastIndex),new a(e,n)}})},function(t,n,r){"use strict";var e=r(1),i=r(181);e(e.P,"String",{padEnd:function(t){return i(this,t,arguments.length>1?arguments[1]:void 0,!1)}})},function(t,n,r){"use strict";var e=r(1),i=r(181);e(e.P,"String",{padStart:function(t){return i(this,t,arguments.length>1?arguments[1]:void 0,!0)}})},function(t,n,r){"use strict";r(82)("trimLeft",function(t){return function(){return t(this,1)}},"trimStart")},function(t,n,r){"use strict";r(82)("trimRight",function(t){return function(){return t(this,2)}},"trimEnd")},function(t,n,r){r(153)("asyncIterator")},function(t,n,r){r(153)("observable")},function(t,n,r){var e=r(1);e(e.S,"System",{global:r(3)})},function(t,n,r){for(var e=r(155),i=r(28),o=r(3),u=r(27),c=r(80),f=r(7),a=f("iterator"),s=f("toStringTag"),l=c.Array,h=["NodeList","DOMTokenList","MediaList","StyleSheetList","CSSRuleList"],v=0;v<5;v++){var p,d=h[v],y=o[d],g=y&&y.prototype;if(g){g[a]||u(g,a,l),g[s]||u(g,s,d),c[d]=l;for(p in e)g[p]||i(g,p,e[p],!0)}}},function(t,n,r){var e=r(1),i=r(151);e(e.G+e.B,{setImmediate:i.set,clearImmediate:i.clear})},function(t,n,r){var e=r(3),i=r(1),o=r(121),u=r(207),c=e.navigator,f=!!c&&/MSIE .\./.test(c.userAgent),a=function(t){return f?function(n,r){return t(o(u,[].slice.call(arguments,2),"function"==typeof n?n:Function(n)),r)}:t};i(i.G+i.B+i.F*f,{setTimeout:a(e.setTimeout),setInterval:a(e.setInterval)})},function(t,n,r){r(330),r(269),r(271),r(270),r(273),r(275),r(280),r(274),r(272),r(282),r(281),r(277),r(278),r(276),r(268),r(279),r(283),r(284),r(236),r(238),r(237),r(286),r(285),r(256),r(266),r(267),r(257),r(258),r(259),r(260),r(261),r(262),r(263),r(264),r(265),r(239),r(240),r(241),r(242),r(243),r(244),r(245),r(246),r(247),r(248),r(249),r(250),r(251),r(252),r(253),r(254),r(255),r(317),r(322),r(329),r(320),r(312),r(313),r(318),r(323),r(325),r(308),r(309),r(310),r(311),r(314),r(315),r(316),r(319),r(321),r(324),r(326),r(327),r(328),r(231),r(233),r(232),r(235),r(234),r(220),r(218),r(224),r(221),r(227),r(229),r(217),r(223),r(214),r(228),r(212),r(226),r(225),r(219),r(222),r(211),r(213),r(216),r(215),r(230),r(155),r(302),r(307),r(184),r(303),r(304),r(305),r(306),r(287),r(183),r(185),r(186),r(342),r(331),r(332),r(337),r(340),r(341),r(335),r(338),r(336),r(339),r(333),r(334),r(288),r(289),r(290),r(291),r(292),r(295),r(293),r(294),r(296),r(297),r(298),r(299),r(301),r(300),r(343),r(369),r(372),r(371),r(373),r(374),r(370),r(375),r(376),r(354),r(357),r(353),r(351),r(352),r(355),r(356),r(346),r(368),r(377),r(345),r(347),r(349),r(348),r(350),r(359),r(360),r(362),r(361),r(364),r(363),r(365),r(366),r(367),r(344),r(358),r(380),r(379),r(378),t.exports=r(52)},function(t,n){function r(t,n){if("string"==typeof n)return t.insertAdjacentHTML("afterend",n);var r=t.nextSibling;return r?t.parentNode.insertBefore(n,r):t.parentNode.appendChild(n)}t.exports=r},,,,,,,,,function(t,n,r){(function(n,r){!function(n){"use strict";function e(t,n,r,e){var i=n&&n.prototype instanceof o?n:o,u=Object.create(i.prototype),c=new p(e||[]);return u._invoke=s(t,r,c),u}function i(t,n,r){try{return{type:"normal",arg:t.call(n,r)}}catch(t){return{type:"throw",arg:t}}}function o(){}function u(){}function c(){}function f(t){["next","throw","return"].forEach(function(n){t[n]=function(t){return this._invoke(n,t)}})}function a(t){function n(r,e,o,u){var c=i(t[r],t,e);if("throw"!==c.type){var f=c.arg,a=f.value;return a&&"object"==typeof a&&m.call(a,"__await")?Promise.resolve(a.__await).then(function(t){n("next",t,o,u)},function(t){n("throw",t,o,u)}):Promise.resolve(a).then(function(t){f.value=t,o(f)},u)}u(c.arg)}function e(t,r){function e(){return new Promise(function(e,i){n(t,r,e,i)})}return o=o?o.then(e,e):e()}"object"==typeof r&&r.domain&&(n=r.domain.bind(n));var o;this._invoke=e}function s(t,n,r){var e=P;return function(o,u){if(e===F)throw new Error("Generator is already running");if(e===M){if("throw"===o)throw u;return y()}for(r.method=o,r.arg=u;;){var c=r.delegate;if(c){var f=l(c,r);if(f){if(f===A)continue;return f}}if("next"===r.method)r.sent=r._sent=r.arg;else if("throw"===r.method){if(e===P)throw e=M,r.arg;r.dispatchException(r.arg)}else"return"===r.method&&r.abrupt("return",r.arg);e=F;var a=i(t,n,r);if("normal"===a.type){if(e=r.done?M:j,a.arg===A)continue;return{value:a.arg,done:r.done}}"throw"===a.type&&(e=M,r.method="throw",r.arg=a.arg)}}}function l(t,n){var r=t.iterator[n.method];if(r===g){if(n.delegate=null,"throw"===n.method){if(t.iterator.return&&(n.method="return",n.arg=g,l(t,n),"throw"===n.method))return A;n.method="throw",n.arg=new TypeError("The iterator does not provide a 'throw' method")}return A}var e=i(r,t.iterator,n.arg);if("throw"===e.type)return n.method="throw",n.arg=e.arg,n.delegate=null,A;var o=e.arg;return o?o.done?(n[t.resultName]=o.value,n.next=t.nextLoc,"return"!==n.method&&(n.method="next",n.arg=g),n.delegate=null,A):o:(n.method="throw",n.arg=new TypeError("iterator result is not an object"),n.delegate=null,A)}function h(t){var n={tryLoc:t[0]};1 in t&&(n.catchLoc=t[1]),2 in t&&(n.finallyLoc=t[2],n.afterLoc=t[3]),this.tryEntries.push(n)}function v(t){var n=t.completion||{};n.type="normal",delete n.arg,t.completion=n}function p(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(h,this),this.reset(!0)}function d(t){if(t){var n=t[w];if(n)return n.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var r=-1,e=function n(){for(;++r<t.length;)if(m.call(t,r))return n.value=t[r],n.done=!1,n;return n.value=g,n.done=!0,n};return e.next=e}}return{next:y}}function y(){return{value:g,done:!0}}var g,b=Object.prototype,m=b.hasOwnProperty,x="function"==typeof Symbol?Symbol:{},w=x.iterator||"@@iterator",S=x.asyncIterator||"@@asyncIterator",_=x.toStringTag||"@@toStringTag",O="object"==typeof t,E=n.regeneratorRuntime;if(E)return void(O&&(t.exports=E));E=n.regeneratorRuntime=O?t.exports:{},E.wrap=e;var P="suspendedStart",j="suspendedYield",F="executing",M="completed",A={},N={};N[w]=function(){return this};var T=Object.getPrototypeOf,I=T&&T(T(d([])));I&&I!==b&&m.call(I,w)&&(N=I);var k=c.prototype=o.prototype=Object.create(N);u.prototype=k.constructor=c,c.constructor=u,c[_]=u.displayName="GeneratorFunction",E.isGeneratorFunction=function(t){var n="function"==typeof t&&t.constructor;return!!n&&(n===u||"GeneratorFunction"===(n.displayName||n.name))},E.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,c):(t.__proto__=c,_ in t||(t[_]="GeneratorFunction")),t.prototype=Object.create(k),t},E.awrap=function(t){return{__await:t}},f(a.prototype),a.prototype[S]=function(){return this},E.AsyncIterator=a,E.async=function(t,n,r,i){var o=new a(e(t,n,r,i));return E.isGeneratorFunction(n)?o:o.next().then(function(t){return t.done?t.value:o.next()})},f(k),k[_]="Generator",k.toString=function(){return"[object Generator]"},E.keys=function(t){var n=[];for(var r in t)n.push(r);return n.reverse(),function r(){for(;n.length;){var e=n.pop();if(e in t)return r.value=e,r.done=!1,r}return r.done=!0,r}},E.values=d,p.prototype={constructor:p,reset:function(t){if(this.prev=0,this.next=0,this.sent=this._sent=g,this.done=!1,this.delegate=null,this.method="next",this.arg=g,this.tryEntries.forEach(v),!t)for(var n in this)"t"===n.charAt(0)&&m.call(this,n)&&!isNaN(+n.slice(1))&&(this[n]=g)},stop:function(){this.done=!0;var t=this.tryEntries[0],n=t.completion;if("throw"===n.type)throw n.arg;return this.rval},dispatchException:function(t){function n(n,e){return o.type="throw",o.arg=t,r.next=n,e&&(r.method="next",r.arg=g),!!e}if(this.done)throw t;for(var r=this,e=this.tryEntries.length-1;e>=0;--e){var i=this.tryEntries[e],o=i.completion;if("root"===i.tryLoc)return n("end");if(i.tryLoc<=this.prev){var u=m.call(i,"catchLoc"),c=m.call(i,"finallyLoc");if(u&&c){if(this.prev<i.catchLoc)return n(i.catchLoc,!0);if(this.prev<i.finallyLoc)return n(i.finallyLoc)}else if(u){if(this.prev<i.catchLoc)return n(i.catchLoc,!0)}else{if(!c)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return n(i.finallyLoc)}}}},abrupt:function(t,n){for(var r=this.tryEntries.length-1;r>=0;--r){var e=this.tryEntries[r];if(e.tryLoc<=this.prev&&m.call(e,"finallyLoc")&&this.prev<e.finallyLoc){var i=e;break}}i&&("break"===t||"continue"===t)&&i.tryLoc<=n&&n<=i.finallyLoc&&(i=null);var o=i?i.completion:{};return o.type=t,o.arg=n,i?(this.method="next",this.next=i.finallyLoc,A):this.complete(o)},complete:function(t,n){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&n&&(this.next=n),A},finish:function(t){for(var n=this.tryEntries.length-1;n>=0;--n){var r=this.tryEntries[n];if(r.finallyLoc===t)return this.complete(r.completion,r.afterLoc),v(r),A}},catch:function(t){for(var n=this.tryEntries.length-1;n>=0;--n){var r=this.tryEntries[n];if(r.tryLoc===t){var e=r.completion;if("throw"===e.type){var i=e.arg;v(r)}return i}}throw new Error("illegal catch attempt")},delegateYield:function(t,n,r){return this.delegate={iterator:d(t),resultName:n,nextLoc:r},"next"===this.method&&(this.arg=g),A}}}("object"==typeof n?n:"object"==typeof window?window:"object"==typeof self?self:this)}).call(n,function(){return this}(),r(158))}])</script><script src="/./main.0cf68a.js"></script><script>!function(){!function(e){var t=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)}("/slider.e37972.js")}()</script>
 
 
+
+<script type="text/javascript" src="/love.js"></script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
