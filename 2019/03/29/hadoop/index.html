@@ -72,12 +72,16 @@ var _hmt = _hmt || [];
 
 
 
-  <script type="text/javascript" src="/love.js"></script>
 <meta name="generator" content="Hexo 5.1.1"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="mymenucontainer" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
     <div class="left-col" q-class="show:isShow">
       
 <div class="overlay" style="background: #4d4d4d"></div>
@@ -96,7 +100,9 @@ var _hmt = _hmt || [];
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/archives/index.html">归档</a></li>
+	        
+				<li><a href="/null">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -152,6 +158,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -167,12 +175,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/null">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -593,8 +603,8 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2019/03/29/hadoop3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hadoop3</div>
+    <a href="/2018/03/29/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo博客搭建</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -613,19 +623,6 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-hadoop%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">1. hadoop简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E4%BD%9C%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">1、作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%8E%86%E5%8F%B2"><span class="toc-number">1.2.</span> <span class="toc-text">2、历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%B8%89%E5%A4%A7%E7%89%88%E6%9C%AC"><span class="toc-number">1.3.</span> <span class="toc-text">3、三大版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%814%E5%A4%A7%E4%BC%98%E5%8A%BF"><span class="toc-number">1.4.</span> <span class="toc-text">4、4大优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81hadoop-1-x%E5%92%8C2-x%E5%8C%BA%E5%88%AB%E3%80%90%E7%BB%84%E6%88%90%E6%9E%B6%E6%9E%84%E3%80%91"><span class="toc-number">1.5.</span> <span class="toc-text">5、hadoop 1.x和2.x区别【组成架构】</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81hdfs-%E7%BB%84%E6%88%90"><span class="toc-number">1.6.</span> <span class="toc-text">6、hdfs 组成:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81yarn-%E7%BB%84%E6%88%90"><span class="toc-number">1.7.</span> <span class="toc-text">7、yarn 组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81mapreduce-%E7%BB%84%E6%88%90"><span class="toc-number">1.8.</span> <span class="toc-text">8、mapreduce 组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%E3%80%81%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%94%9F%E6%80%81%E4%BD%93%E7%B3%BB"><span class="toc-number">1.9.</span> <span class="toc-text">9、大数据生态体系</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-hadoop%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">2. hadoop环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-number">2.1.</span> <span class="toc-text">1. 虚拟机环境准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85JDK"><span class="toc-number">2.2.</span> <span class="toc-text">2. 安装JDK</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85hadoop"><span class="toc-number">2.3.</span> <span class="toc-text">3. 安装hadoop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AE%E5%8E%86%E5%8F%B2%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.4.</span> <span class="toc-text">3. 配置历史服务器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97%E8%81%9A%E5%90%88"><span class="toc-number">2.5.</span> <span class="toc-text">4. 配置日志聚合</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-hadoop-%E7%BC%96%E8%AF%91%E6%BA%90%E7%A0%81"><span class="toc-number">3.</span> <span class="toc-text">3. hadoop 编译源码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-hdfs%E6%A6%82%E8%BF%B0"><span class="toc-number">4.</span> <span class="toc-text">4. hdfs概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89"><span class="toc-number">4.1.</span> <span class="toc-text">1. 定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">4.2.</span> <span class="toc-text">2. 优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9E%B6%E6%9E%84"><span class="toc-number">4.3.</span> <span class="toc-text">3. 架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-hdfs%E5%9D%97%E5%A4%A7%E5%B0%8F"><span class="toc-number">4.4.</span> <span class="toc-text">4. hdfs块大小</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-hdfs-shell"><span class="toc-number">5.</span> <span class="toc-text">5. hdfs shell</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-hdfs-api"><span class="toc-number">6.</span> <span class="toc-text">6. hdfs api</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-hdfs%E8%AF%BB%E5%86%99%E6%95%B0%E6%8D%AE%E6%B5%81%E7%A8%8B"><span class="toc-number">7.</span> <span class="toc-text">7. hdfs读写数据流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E5%92%8C%E6%9C%BA%E6%9E%B6%E6%84%9F%E7%9F%A5"><span class="toc-number">8.</span> <span class="toc-text">8. 网络拓扑和机架感知</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-namenode-%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="toc-number">9.</span> <span class="toc-text">9. namenode 工作机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-fsiamge%E5%92%8Cedits"><span class="toc-number">10.</span> <span class="toc-text">10. fsiamge和edits</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-checkpoint"><span class="toc-number">11.</span> <span class="toc-text">11. checkpoint</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3"><span class="toc-number">12.</span> <span class="toc-text">12. 常见端口</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -657,6 +654,9 @@ var _hmt = _hmt || [];
       	</div>
     </div>
   </div>
+  
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/love.js"></script>
 </footer>
 
 
@@ -937,5 +937,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
+<script>
+    var hide = false;
+    function myFunction(x) {
+        x.classList.toggle("change");
+        if(hide == false){
+            $(".left-col").css('display', 'none');
+            $(".mid-col").css("left", 6);
+            $(".tools-col").css('display', 'none');
+            $(".tools-col.hide").css('display', 'none');
+            hide = true;
+        }else{
+            $(".left-col").css('display', '');
+            $(".mid-col").css("left", 300);
+            $(".tools-col").css('display', '');
+            $(".tools-col.hide").css('display', '');
+            hide = false;
+        }
+    }
+</script>
 </html>
