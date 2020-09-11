@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8">
   
+  <link rel="stylesheet" href="/lib/gitalk/gitalk.css">
+  <script src="/lib/gitalk/gitalk.min.js"></script>
+
+  
 <script type="text/javascript">
 
 var _hmt = _hmt || [];
@@ -39,10 +43,14 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="https://gitee.com/curryfor369/picgo/raw/master/img/20200910184222.png">
 <meta property="og:image" content="https://gitee.com/curryfor369/picgo/raw/master/img/20200910184221.png">
 <meta property="og:image" content="https://gitee.com/curryfor369/picgo/raw/master/img/20200910184224.png">
+<meta property="og:image" content="d:/桌面/冉辰星总结/curryfor369Blog/source_posts/hexo博客搭建.assets/20200911153113.png">
+<meta property="og:image" content="d:/桌面/冉辰星总结/curryfor369Blog/source_posts/hexo博客搭建.assets/20200911153729.png">
+<meta property="og:image" content="d:/桌面/冉辰星总结/curryfor369Blog/source_posts/hexo博客搭建.assets/20200911153927.png">
+<meta property="og:image" content="d:/桌面/冉辰星总结/curryfor369Blog/source_posts/hexo博客搭建.assets/20200911164923.png">
 <meta property="article:published_time" content="2018-03-29T07:03:48.000Z">
-<meta property="article:modified_time" content="2020-09-11T04:16:27.292Z">
+<meta property="article:modified_time" content="2020-09-11T08:52:31.948Z">
 <meta property="article:author" content="curry">
-<meta property="article:tag" content="blog">
+<meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/curryfor369/picgo/raw/master/img/20200910184220.png">
   
@@ -106,7 +114,9 @@ var _hmt = _hmt || [];
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
-				<li><a href="/">分类</a></li>
+				<li><a href="/categories">分类</a></li>
+	        
+				<li><a href="/tags">标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -164,6 +174,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -182,11 +194,13 @@ var _hmt = _hmt || [];
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 25%"><a href="/archives/index.html">归档</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/">分类</a></li>
+					<li style="width: 25%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 25%"><a href="/tags">标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -201,7 +215,26 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo博客搭建" class="article article-type-post " itemscope itemprop="blogPost">
+            </article>
+<div class="gitalk">
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+            clientID: 'b9be3fa17b7f0cb243d6',
+            clientSecret: 'e0148170439364651a5cf711e8fb88ff888d6596',
+            repo: 'curryfor369.github.io',
+            owner: 'curryfor369',
+            admin: ['curryfor369'],
+            id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+ 
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+
+<article id="post-hexo博客搭建" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -228,7 +261,7 @@ var _hmt = _hmt || [];
     <div id="toc-article" class="toc-article">
         <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
         <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">1、搭建步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E7%AE%80%E6%B4%81%E7%89%88%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.</span> <span class="toc-text">2、简洁版步骤:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">3、实现文章目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%95%88%E6%9E%9C"><span class="toc-number">3.1.</span> <span class="toc-text">1、效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%B7%BB%E5%8A%A0-CSS-%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">2、添加 CSS 样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%BF%AE%E6%94%B9-article-ejs-%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">3、修改 article.ejs 文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%9C%A8%E6%AF%8F%E7%AF%87%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E5%8A%A0%E5%85%A5%EF%BC%9Atoc-true"><span class="toc-number">3.4.</span> <span class="toc-text">4、在每篇文章开头加入：toc: true</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%81rss%E8%AE%A2%E9%98%85"><span class="toc-number">4.</span> <span class="toc-text">4、rss订阅</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">5、百度统计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6"><span class="toc-number">6.</span> <span class="toc-text">6、代码复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%E3%80%81%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88"><span class="toc-number">7.</span> <span class="toc-text">7、点击特效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8%E3%80%81%E5%88%86%E7%B1%BB%EF%BC%8C%E5%BD%92%E6%A1%A3%EF%BC%8C%E8%AF%84%E8%AE%BA"><span class="toc-number">8.</span> <span class="toc-text">8、分类，归档，评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9%E3%80%81%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%9A%90%E8%97%8F"><span class="toc-number">9.</span> <span class="toc-text">9、侧边栏隐藏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10%E3%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E9%95%BF%E5%BA%A6"><span class="toc-number">10.</span> <span class="toc-text">10、代码块长度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x%E3%80%81%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">11.</span> <span class="toc-text">x、遇到的问题</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">1、搭建步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E3%80%81%E7%AE%80%E6%B4%81%E7%89%88%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.</span> <span class="toc-text">2、简洁版步骤:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E3%80%81%E5%AE%9E%E7%8E%B0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">3、实现文章目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%95%88%E6%9E%9C"><span class="toc-number">3.1.</span> <span class="toc-text">1、效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E6%B7%BB%E5%8A%A0-CSS-%E6%A0%B7%E5%BC%8F"><span class="toc-number">3.2.</span> <span class="toc-text">2、添加 CSS 样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%BF%AE%E6%94%B9-article-ejs-%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.</span> <span class="toc-text">3、修改 article.ejs 文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E5%9C%A8%E6%AF%8F%E7%AF%87%E6%96%87%E7%AB%A0%E5%BC%80%E5%A4%B4%E5%8A%A0%E5%85%A5%EF%BC%9Atoc-true"><span class="toc-number">3.4.</span> <span class="toc-text">4、在每篇文章开头加入：toc: true</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E3%80%81rss%E8%AE%A2%E9%98%85"><span class="toc-number">4.</span> <span class="toc-text">4、rss订阅</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1"><span class="toc-number">5.</span> <span class="toc-text">5、百度统计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E4%BB%A3%E7%A0%81%E5%A4%8D%E5%88%B6"><span class="toc-number">6.</span> <span class="toc-text">6、代码复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%E3%80%81%E7%82%B9%E5%87%BB%E7%89%B9%E6%95%88"><span class="toc-number">7.</span> <span class="toc-text">7、点击特效</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8%E3%80%81%E6%A0%87%E7%AD%BE%EF%BC%8C%E5%88%86%E7%B1%BB%EF%BC%8C%E5%BD%92%E6%A1%A3%EF%BC%8C%E8%AF%84%E8%AE%BA"><span class="toc-number">8.</span> <span class="toc-text">8、标签，分类，归档，评论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BD%92%E6%A1%A3"><span class="toc-number">8.1.</span> <span class="toc-text">1. 归档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%86%E7%B1%BB"><span class="toc-number">8.2.</span> <span class="toc-text">2. 分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%A0%87%E7%AD%BE"><span class="toc-number">8.3.</span> <span class="toc-text">3. 标签</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9%E3%80%81%E4%BE%A7%E8%BE%B9%E6%A0%8F%E9%9A%90%E8%97%8F"><span class="toc-number">9.</span> <span class="toc-text">9、侧边栏隐藏</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10%E3%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E9%95%BF%E5%BA%A6"><span class="toc-number">10.</span> <span class="toc-text">10、代码块长度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#x%E3%80%81%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">11.</span> <span class="toc-text">x、遇到的问题</span></a></li></ol>
          </div>
    <script type="text/javascript">
     function showToc(){
@@ -246,6 +279,8 @@ var _hmt = _hmt || [];
    </script>
       
 <!-- 目录内容结束 -->
+
+
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="1、搭建步骤"><a href="#1、搭建步骤" class="headerlink" title="1、搭建步骤"></a>1、搭建步骤</h1><p>注：cmd为管理员模式 环境： win10+git+github+nodejs</p>
@@ -447,7 +482,51 @@ var _hmt = _hmt || [];
 
 </li>
 </ol>
-<h1 id="8、分类，归档，评论"><a href="#8、分类，归档，评论" class="headerlink" title="8、分类，归档，评论"></a>8、分类，归档，评论</h1><h1 id="9、侧边栏隐藏"><a href="#9、侧边栏隐藏" class="headerlink" title="9、侧边栏隐藏"></a>9、侧边栏隐藏</h1><ol>
+<h1 id="8、标签，分类，归档，评论"><a href="#8、标签，分类，归档，评论" class="headerlink" title="8、标签，分类，归档，评论"></a>8、标签，分类，归档，评论</h1><h2 id="1-归档"><a href="#1-归档" class="headerlink" title="1. 归档"></a>1. 归档</h2><ol>
+<li><p>修改\yilia\_config.yml</p>
+<p><img src="d:\桌面\冉辰星总结\curryfor369Blog\source_posts\hexo博客搭建.assets\20200911153113.png"></p>
+</li>
+</ol>
+<h2 id="2-分类"><a href="#2-分类" class="headerlink" title="2. 分类"></a>2. 分类</h2><ol>
+<li><p>生成分类页面,生成到source/categories</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;categories&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改分类页面配置, source/categories/index.md</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2019-10-30 16:36:49</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">comments: false #关闭评论</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分类页面的css, yilia\source\main.000.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">category-all-page</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">30px</span> <span class="number">40px</span> <span class="number">30px</span> <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">min-height</span>: <span class="number">70vh</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-tag">h2</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-all-title</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-all</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">20px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-item-list-item</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">15px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-item-list-count</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: $grey;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-item-list-count</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot; (&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-item-list-count</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;) &quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-item</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">10px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-count</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: $grey;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-count</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot; (&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-count</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;) &quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list-child</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">10px</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改yilia\layout\categories.ejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;article class&#x3D;&quot;article article-type-post show&quot;&gt;</span><br><span class="line">  &lt;header class&#x3D;&quot;article-header&quot; style&#x3D;&quot;border-bottom: 1px solid #ccc&quot;&gt;</span><br><span class="line">  &lt;h1 class&#x3D;&quot;article-title&quot; itemprop&#x3D;&quot;name&quot;&gt;</span><br><span class="line">    &lt;%&#x3D; page.title %&gt;</span><br><span class="line">  &lt;&#x2F;h1&gt;</span><br><span class="line">  &lt;&#x2F;header&gt;</span><br><span class="line"></span><br><span class="line">  &lt;% if (site.categories.length)&#123; %&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;category-all-page&quot;&gt;</span><br><span class="line">    &lt;h2&gt;共计&amp;nbsp;&lt;%&#x3D; site.categories.length %&gt;&amp;nbsp;个分类&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;%- list_categories(site.categories, &#123;</span><br><span class="line">      show_count: true,</span><br><span class="line">      class: &#39;category-list-item&#39;,</span><br><span class="line">      style: &#39;list&#39;,</span><br><span class="line">      depth:3,    #这里代表着几层分类，写入时把这个注释删掉</span><br><span class="line">      separator: &#39;&#39;</span><br><span class="line">    &#125;) %&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;&#x2F;article&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置yilia\_config.yml</p>
+<p><img src="d:\桌面\冉辰星总结\curryfor369Blog\source_posts\hexo博客搭建.assets\20200911153729.png"></p>
+</li>
+<li><p>文章开头编写</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo博客搭建</span><br><span class="line">date: 2018-03-29 15:03:48</span><br><span class="line">tags: blog</span><br><span class="line">toc: true</span><br><span class="line">categories: hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p><img src="d:\桌面\冉辰星总结\curryfor369Blog\source_posts\hexo博客搭建.assets\20200911153927.png"></p>
+</li>
+</ol>
+<h2 id="3-标签"><a href="#3-标签" class="headerlink" title="3. 标签"></a>3. 标签</h2><ol>
+<li><p>新建标签页面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 生成的页面配置 source/tags/index.md</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-09-11 16:43:48</span><br><span class="line">type: tags</span><br><span class="line">layout: tags</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改yilia\layout\tags.ejs</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;article class&#x3D;&quot;article article-type-post show&quot;&gt;</span><br><span class="line">  &lt;header class&#x3D;&quot;article-header&quot; style&#x3D;&quot;border-bottom: 1px solid #ccc&quot;&gt;</span><br><span class="line">    &lt;h1 class&#x3D;&quot;article-title&quot; itemprop&#x3D;&quot;name&quot;&gt;标签&lt;&#x2F;h1&gt;</span><br><span class="line"></span><br><span class="line">  &lt;&#x2F;header&gt;</span><br><span class="line"></span><br><span class="line">  &lt;% if (site.tags.length) &#123; %&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;tag-cloud&quot;&gt;</span><br><span class="line">      &lt;div class&#x3D;&quot;tag-cloud-title&quot;&gt;</span><br><span class="line">        &lt;%- &quot;TOTAl : &quot; + site.tags.length %&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div class&#x3D;&quot;tag-cloud-tags&quot;&gt; </span><br><span class="line">        &lt;%- tagcloud(&#123;</span><br><span class="line">          min_font: 12,</span><br><span class="line">          max_font: 30,</span><br><span class="line">          amount: 200,</span><br><span class="line">          color: true,</span><br><span class="line">          start_color: &#39;#555&#39;,</span><br><span class="line">          end_color: &#39;#111&#39;</span><br><span class="line">          &#125;) %&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+</ol>
+<p><img src="d:\桌面\冉辰星总结\curryfor369Blog\source_posts\hexo博客搭建.assets\20200911164923.png"></p>
+<h1 id="9、侧边栏隐藏"><a href="#9、侧边栏隐藏" class="headerlink" title="9、侧边栏隐藏"></a>9、侧边栏隐藏</h1><ol>
 <li><p>添加css,<code>themes\yilia\source\main.0cf68a.css</code></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*侧边栏隐藏*/</span></span><br><span class="line"><span class="selector-class">.mymenucontainer</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>:block;</span><br><span class="line">	<span class="attribute">cursor</span>:pointer;</span><br><span class="line">	<span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">	<span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">35px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">35px</span>;</span><br><span class="line">	<span class="attribute">z-index</span>:<span class="number">9999</span>;</span><br><span class="line">	<span class="attribute">position</span>:fixed;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bar1</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">35px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">3px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>:<span class="number">#333</span>;</span><br><span class="line">	<span class="attribute">margin</span>:<span class="number">6px</span> <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">transition</span>:<span class="number">0.4s</span>;</span><br><span class="line">	<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(-<span class="number">45deg</span>) <span class="built_in">translate</span>(-<span class="number">8px</span>,<span class="number">8px</span>);</span><br><span class="line">	<span class="attribute">transform</span>:<span class="built_in">rotate</span>(-<span class="number">45deg</span>) <span class="built_in">translate</span>(-<span class="number">8px</span>,<span class="number">8px</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bar2</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">35px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">3px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>:<span class="number">#333</span>;</span><br><span class="line">	<span class="attribute">margin</span>:<span class="number">6px</span> <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">transition</span>:<span class="number">0.4s</span>;</span><br><span class="line">	<span class="attribute">opacity</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bar3</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">35px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">3px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>:<span class="number">#333</span>;</span><br><span class="line">	<span class="attribute">margin</span>:<span class="number">6px</span> <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">transition</span>:<span class="number">0.4s</span>;</span><br><span class="line">	<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(<span class="number">45deg</span>) <span class="built_in">translate</span>(-<span class="number">4px</span>,-<span class="number">6px</span>);</span><br><span class="line">	<span class="attribute">transform</span>:<span class="built_in">rotate</span>(<span class="number">45deg</span>) <span class="built_in">translate</span>(-<span class="number">4px</span>,-<span class="number">6px</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.change</span> <span class="selector-class">.bar1</span> &#123;</span><br><span class="line">	<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(<span class="number">0deg</span>) <span class="built_in">translate</span>(<span class="number">0px</span>,<span class="number">0px</span>);</span><br><span class="line">	<span class="attribute">transform</span>:<span class="built_in">rotate</span>(<span class="number">0deg</span>) <span class="built_in">translate</span>(<span class="number">0px</span>,<span class="number">0px</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.change</span> <span class="selector-class">.bar2</span> &#123;</span><br><span class="line">	<span class="attribute">opacity</span>:<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.change</span> <span class="selector-class">.bar3</span> &#123;</span><br><span class="line">	<span class="attribute">-webkit-transform</span>:<span class="built_in">rotate</span>(<span class="number">0deg</span>) <span class="built_in">translate</span>(<span class="number">0px</span>,<span class="number">0px</span>);</span><br><span class="line">	<span class="attribute">transform</span>:<span class="built_in">rotate</span>(<span class="number">0deg</span>) <span class="built_in">translate</span>(<span class="number">0px</span>,<span class="number">0px</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*侧边栏隐藏结束*/</span></span><br></pre></td></tr></table></figure>
 
@@ -493,13 +572,24 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -701,7 +791,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+                <a href="javascript:void(0)" class="js-tag color2">a</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">b</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
