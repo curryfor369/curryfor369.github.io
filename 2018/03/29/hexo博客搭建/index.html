@@ -216,24 +216,6 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             </article>
-<div class="gitalk">
-    <div id="gitalk-container"></div>
-    <script type="text/javascript">
-        const gitalk = new Gitalk({
-            clientID: 'ad52eff29465b4b0b162',
-            clientSecret: '45406255c3dc683bdedd333616a6eaed9588daa3',
-            repo: 'curryfor369.github.io',
-            owner: 'curryfor369',
-            admin: ['curryfor369'],
-            id: md5(location.pathname),      // Ensure uniqueness and length less than 50
-            distractionFreeMode: false  // Facebook-like distraction free mode
-        })
- 
-        gitalk.render('gitalk-container')
-    </script>
-</div>
-
-
 <article id="post-hexo博客搭建" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -648,6 +630,27 @@ var _hmt = _hmt || [];
       <div class="clearfix"></div>
     </div>
   </div>
+  
+  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: '',
+  	clientSecret: '',
+  	repo: 'curryfor369.github.io',
+  	owner: '',
+  	admin: [''],
+  	id: 'Thu Mar 29 2018 15:03:48 GMT+0800',
+  	distractionFreeMode: ''
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+  
 </article>
 
   
